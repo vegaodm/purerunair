@@ -1,146 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support | PureRunAir </title>
-    <style>
-        :root {
-            --primary-color: #007AFF; /* iOS Blue */
-            --text-color: #333;
-            --bg-color: #f5f5f7;
-            --card-bg: #ffffff;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-        header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-        header p {
-            font-size: 1.2rem;
-            color: #666;
-        }
-        .faq-section {
-            margin-bottom: 40px;
-        }
-        .faq-card {
-            background: var(--card-bg);
-            padding: กัน;
-            margin-bottom: 15px;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            padding: 25px;
-        }
-        .faq-card h2 {
-            font-size: 1.5rem;
-            margin-top: 0;
-            color: var(--primary-color);
-        }
-        .faq-item {
-            border-bottom: 1px solid #eee;
-            padding: bottom: 15px;
-            margin-bottom: 15px;
-        }
-        .faq-item:last-child {
-            border-bottom: none;
-        }
-        .question {
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-            display: block;
-        }
-        .answer {
-            color: #555;
-        }
-        .contact-card {
-            text-align: center;
-            background: var(--primary-color);
-            color: white;
-            padding: 40px;
-            border-radius: 12px;
-            margin-top: 50px;
-        }
-        .contact-card a {
-            color: white;
-            text-decoration: underline;
-            font-weight: bold;
-        }
-        footer {
-            text-align: center;
-            padding: 40px 0;
-            font-size: 0.9rem;
-            color: #888;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support - PureRunAir</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.7;
+    color: #24292f;
+    background: #ffffff;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+  }
+  h1 { font-size: 1.9rem; border-bottom: 1px solid #d0d7de; padding-bottom: 12px; }
+  h2 { font-size: 1.3rem; margin-top: 2.2rem; }
+  p, li { font-size: 1rem; }
+  ul { padding-left: 24px; }
+  a { color: #0969da; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .meta { color: #57606a; font-size: 0.9rem; margin-bottom: 2rem; }
+  .qa { margin: 1.2rem 0; }
+  .q { font-weight: 600; }
+  .footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid #d0d7de;
+    color: #57606a;
+    font-size: 0.85rem;
+  }
+  .card {
+    background: #f6f8fa;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 0.5rem 0 1.5rem;
+  }
+</style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <h1>PureRunAir Support</h1>
-        <p>Everything you need to know about your running journey.</p>
-    </header>
+<h1>Support</h1>
+<p class="meta">PureRunAir &middot; Version 1.0.16 &middot; Requires iOS 16.2 or later</p>
 
-    <section class="faq-section">
-        <div class="faq-card">
-            <h2>Frequently Asked Questions</h2>
-            
-            <div class="faq-item">
-                <span class="question">How is my data stored?</span>
-                <div class="answer">
-                    Your running data is stored locally on your device using a secure SQLite database. We prioritize your privacy; your personal running history remains on your phone unless you explicitly export it.
-                </div>
-            </div>
+<p>
+PureRunAir is a minimalist running tracker. It records your route using GPS, computes distance, pace and
+elevation, exports your runs as GPX files, and shows live run progress on the Lock Screen and Dynamic
+Island. The app is fully offline — your runs never leave your device.
+</p>
 
-            <div class="faq-item">
-                <span class="question">Can I export my runs to other apps?</span>
-                <div class="answer">
-                    Yes! You can export your activities as GPX files through the app, making it easy to share your routes or import them into other fitness platforms.
-                </div>
-            </div>
+<h2>Contact</h2>
+<p>
+Need help, found a bug, or have a suggestion? Email
+<a href="mailto:vegaodm@outlook.com">vegaodm@outlook.com</a>.
+To help us resolve issues quickly, please include:</p>
+<ul>
+  <li>Your iPhone model and iOS version (<strong>Settings &rarr; General &rarr; About</strong>)</li>
+  <li>The PureRunAir version (<strong>Settings &rarr; App</strong> or this page)</li>
+  <li>Steps to reproduce the problem, and what you expected to happen</li>
+</ul>
 
-            <div class="faq-item">
-                <span class="question">Why does my GPS accuracy vary?</span>
-                <div class="answer">
-                    GPS accuracy can be affected by tall buildings, heavy tree cover, or weather conditions. Our app uses advanced filtering algorithms to provide the most accurate path possible.
-                </div>
-            </div>
+<h2>Frequently Asked Questions</h2>
 
-            <div class="faq-item">
-                <span class="question">I lost my data after an update. What should I do?</span>
-                <div class="answer">
-                    We design our updates to be seamless. However, if you encounter any issues during a version transition, please contact us immediately. We always recommend keeping regular backups via the export feature.
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="qa">
+  <p class="q">Why does the app ask for "Always" location permission?</p>
+  <p>So the tracker can keep recording while your phone is locked or the app is in the background — for
+  example while the phone is in a pocket or armband. Your location is used only to record your route and
+  never leaves the device. You can change this at any time in
+  <strong>Settings &rarr; Privacy &amp; Security &rarr; Location Services</strong>.</p>
+</div>
 
-    <section class="contact-card">
-        <h2>Still have questions?</h2>
-        <p>We are here to help you hit your next personal best.</p>
-        <p>Email us at: <a href="mailto:vegaodm@outlook.com">vegaodm@outlook.com</a></p>
-    </section>
+<div class="qa">
+  <p class="q">Does the app use the internet?</p>
+  <p>No. PureRunAir has no network connection at all. There is no account, no cloud, no analytics — all
+  data stays on your iPhone.</p>
+</div>
 
-    <footer>
-        &copy; 2026 [PureRunAir/Beijing Brava Technolocy Ltd]. All rights reserved.
-    </footer>
+<div class="qa">
+  <p class="q">How do I put my phone in a pocket or armband?</p>
+  <p>Simply lock your screen and put the phone away. Since "Always" location permission is granted, the app
+  keeps recording in the background and updates the Live Activity so you can see your time and distance at
+  a glance.</p>
+</div>
+
+<div class="qa">
+  <p class="q">How do I export a run as a GPX file?</p>
+  <p>Open the finished run and use the Export / GPX option. iOS presents the standard share sheet, where you
+  can save the GPX file to the Files app, AirDrop it, or send it to a service of your choice. Export is
+  local and uses your existing iOS sharing options.</p>
+</div>
+
+<div class="qa">
+  <p class="q">Where can I view the Live Activity?</p>
+  <p>While a run is active, it appears on the Lock Screen and in the Dynamic Island on supported iPhone
+  models (iPhone 14 Pro and later). It updates periodically and ends automatically when you stop the run.</p>
+</div>
+
+<div class="qa">
+  <p class="q">How do I delete my recordings?</p>
+  <p>You can delete recorded runs in the app, or remove all app data by uninstalling PureRunAir. Because
+  there is no cloud, deleting locally deletes everywhere.</p>
+</div>
+
+<div class="qa">
+  <p class="q">The route looks wrong or has gaps. What can I do?</p>
+  <ul>
+    <li>Make sure Location Services is enabled for the app and GPS signal is available (open sky).</li>
+    <li>Check iOS Location Services for the app is set to <strong>Always</strong>.</li>
+    <li>Enable <strong>Precise Location</strong> for the app in iOS settings.</li>
+    <li>On battery-drain concerns: the app respects your watch/phone settings; if recording becomes
+        unreliable, close other apps that may be competing for GPS.</li>
+  </ul>
+</div>
+
+<div class="qa">
+  <p class="q">My question isn't answered here.</p>
+  <p>Email <a href="mailto:vegaodm@outlook.com">vegaodm@outlook.com</a> and we'll get back to you.</p>
+</div>
+
+<h2>Troubleshooting Checklist</h2>
+<ul>
+  <li>iOS 16.2 or later installed?</li>
+  <li>Location Services enabled and set to <strong>Always</strong> + <strong>Precise Location</strong>?</li>
+  <li>Background App Refresh / location background mode not restricted by Low Power Mode?</li>
+  <li>Restarting the app (swipe it away and reopen) fixes many transient issues.</li>
+</ul>
+
+<div class="footer">
+PureRunAir &middot; Version 1.0.16 &middot;<br>
+<a href="index.html">Privacy Policy</a>
 </div>
 
 </body>
