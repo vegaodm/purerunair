@@ -42,7 +42,7 @@
 <body>
 
 <h1>Support</h1>
-<p class="meta">PureRunAir &middot; Version 1.0.18 &middot; Requires iOS 16.2 or later</p>
+<p class="meta">PureRunAir &middot; Version 1.1.5 &middot; iPhone only &middot; Requires iOS 16.2 or later</p>
 
 <p>
 PureRunAir is a minimalist running tracker. It records your route using GPS, computes distance, pace and
@@ -57,18 +57,20 @@ Need help, found a bug, or have a suggestion? Email
 To help us resolve issues quickly, please include:</p>
 <ul>
   <li>Your iPhone model and iOS version (<strong>Settings &rarr; General &rarr; About</strong>)</li>
-  <li>The PureRunAir version (<strong>Settings &rarr; App</strong> or this page)</li>
+  <li>The PureRunAir version (shown at <strong>Settings &rarr; Running</strong>, or on this page)</li>
   <li>Steps to reproduce the problem, and what you expected to happen</li>
 </ul>
 
 <h2>Frequently Asked Questions</h2>
 
 <div class="qa">
-  <p class="q">Why does the app ask for "Always" location permission?</p>
-  <p>So the tracker can keep recording while your phone is locked or the app is in the background — for
-  example while the phone is in a pocket or armband. Your location is used only to record your route and
-  never leaves the device. You can change this at any time in
-  <strong>Settings &rarr; Privacy &amp; Security &rarr; Location Services</strong>.</p>
+  <p class="q">How does location permission work?</p>
+  <p>PureRunAir asks for <strong>While Using the App</strong> access when you start your first run. While a
+  run is active, iOS keeps a continuous background location session, so recording continues with the
+  screen locked or the app in the background — for example with the phone in a pocket or armband. An
+  <strong>Always</strong> option may also be available in Settings on some iOS versions; it is optional.
+  Your location is used only to record your route and never leaves the device. You can change access at
+  any time in <strong>Settings &rarr; Privacy &amp; Security &rarr; Location Services</strong>.</p>
 </div>
 
 <div class="qa">
@@ -78,39 +80,71 @@ To help us resolve issues quickly, please include:</p>
 </div>
 
 <div class="qa">
-  <p class="q">How do I put my phone in a pocket or armband?</p>
-  <p>Simply lock your screen and put the phone away. Since "Always" location permission is granted, the app
-  keeps recording in the background and updates the Live Activity so you can see your time and distance at
-  a glance.</p>
+  <p class="q">Can I keep recording with the screen locked?</p>
+  <p>Yes. Start the run, then lock the screen and put the phone away. While the run is active the app
+  keeps recording and updates the Live Activity, so you can see your time and distance at a glance.</p>
+</div>
+
+<div class="qa">
+  <p class="q">How do I switch between kilometres and miles?</p>
+  <p>Tap the Speed / Pace cell in the four-cell header to toggle metric and imperial units. The run list
+  and detail statistics update immediately; the Live Activity picks up the new unit on its next update.</p>
+</div>
+
+<div class="qa">
+  <p class="q">Can I back up my runs or move them to another device?</p>
+  <p>Yes. The arrow buttons at the top of the run list export and import the local SQLite database. Export
+  writes a snapshot you can keep in Files; importing replaces <em>all</em> current data with the chosen
+  database. Import is disabled while a run is recording.</p>
 </div>
 
 <div class="qa">
   <p class="q">How do I export a run as a GPX file?</p>
-  <p>Open the finished run and use the Export / GPX option. iOS presents the standard share sheet, where you
-  can save the GPX file to the Files app, AirDrop it, or send it to a service of your choice. Export is
-  local and uses your existing iOS sharing options.</p>
+  <p>Tap <strong>Select</strong> in the top-right, choose one or more runs, then tap <strong>Share</strong>.
+  PureRunAir generates the GPX file at that moment and iOS presents the standard share sheet, where you
+  can save it to the Files app, AirDrop it, or send it to a service of your choice. The run detail screen
+  is for viewing, not exporting.</p>
+</div>
+
+<div class="qa">
+  <p class="q">I force-quit the app (or it was killed) in the middle of a run. Is the run lost?</p>
+  <p>No. The run is closed automatically the next time you open PureRunAir: it is marked as finished and
+  its end time is set to the last recorded GPS point, so it appears in your list with the distance it had
+  actually covered. Because trackpoints are written to disk in short batches, up to about 5 seconds at the
+  very end of that run can be missing.</p>
+</div>
+
+<div class="qa">
+  <p class="q">Why do elevation totals differ from what I remember (or from another app)?</p>
+  <p>Altitude from GPS is noisy, so PureRunAir smooths it before counting climb: a short median over the
+  last few samples, then a 1&nbsp;m threshold, so a single bad reading cannot invent a hill. That means the
+  totals are deliberately conservative, and a run recorded with an older version can show a slightly
+  different gain/loss than it did at the time. The recorded route and altitude samples themselves are
+  unchanged — only the summary is recalculated.</p>
 </div>
 
 <div class="qa">
   <p class="q">Where can I view the Live Activity?</p>
-  <p>While a run is active, it appears on the Lock Screen and in the Dynamic Island on supported iPhone
-  models (iPhone 14 Pro and later). It updates periodically and ends automatically when you stop the run.</p>
+  <p>While a run is active, it appears on the Lock Screen on supported iOS 16.1+ devices, and in the
+  Dynamic Island on iPhone 14 Pro and later. It updates about every 10 seconds. Tap it to open the run
+  detail; it ends when you stop the run.</p>
 </div>
 
 <div class="qa">
   <p class="q">How do I delete my recordings?</p>
-  <p>You can delete recorded runs in the app, or remove all app data by uninstalling PureRunAir. Because
-  there is no cloud, deleting locally deletes everywhere.</p>
+  <p>Swipe a saved run to delete it, or tap <strong>Select</strong>, choose several runs, and use Delete.
+  The run currently being recorded cannot be deleted. To remove everything, uninstall PureRunAir — there
+  is no cloud copy, so deleting locally deletes everywhere.</p>
 </div>
 
 <div class="qa">
   <p class="q">The route looks wrong or has gaps. What can I do?</p>
   <ul>
     <li>Make sure Location Services is enabled for the app and GPS signal is available (open sky).</li>
-    <li>Check iOS Location Services for the app is set to <strong>Always</strong>.</li>
+    <li>Set the app's location access to <strong>While Using the App</strong> (Always is optional).</li>
     <li>Enable <strong>Precise Location</strong> for the app in iOS settings.</li>
-    <li>On battery-drain concerns: the app respects your watch/phone settings; if recording becomes
-        unreliable, close other apps that may be competing for GPS.</li>
+    <li>If recording pauses unexpectedly, close other apps that may be competing for GPS and keep the
+        phone where the antenna has a clear view of the sky.</li>
   </ul>
 </div>
 
@@ -119,16 +153,30 @@ To help us resolve issues quickly, please include:</p>
   <p>Email <a href="mailto:vegaodm@outlook.com">vegaodm@outlook.com</a> and we'll get back to you.</p>
 </div>
 
+<h2>What's new in 1.1.5</h2>
+<ul>
+  <li>The Live Activity pace now uses moving time, matches the app, and follows metric/imperial units;
+      Lock Screen text stays readable in light mode.</li>
+  <li>Route maps keep their true shape instead of being stretched horizontally.</li>
+  <li>Elapsed time covers the whole run, and the detail screen refreshes while a run is active.</li>
+  <li>Importing a database is safer: a bad file can no longer replace your runs, and import is blocked
+      while recording.</li>
+  <li>Duplicate GPS fixes can no longer drop a batch of recorded points; leaving the app flushes the
+      buffer to disk immediately.</li>
+  <li>If location access is revoked during a run, the run is closed cleanly.</li>
+  <li>GPX export is prepared off the main thread, so the run list stays responsive.</li>
+</ul>
+
 <h2>Troubleshooting Checklist</h2>
 <ul>
   <li>iOS 16.2 or later installed?</li>
-  <li>Location Services enabled and set to <strong>Always</strong> + <strong>Precise Location</strong>?</li>
-  <li>Background App Refresh / location background mode not restricted by Low Power Mode?</li>
+  <li>Location Services enabled with <strong>Precise Location</strong>?</li>
+  <li>Low Power Mode not restricting background activity during long runs?</li>
   <li>Restarting the app (swipe it away and reopen) fixes many transient issues.</li>
 </ul>
 
 <div class="footer">
-PureRunAir &middot; Version 1.0.18 &middot;<br>
+PureRunAir &middot; Version 1.1.5 &middot;<br>
 <a href="index.html">Privacy Policy</a>
 </div>
 

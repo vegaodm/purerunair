@@ -40,7 +40,7 @@
 <body>
 
 <h1>Privacy Policy</h1>
-<p class="meta">Effective date: 2026-09-17</p>
+<p class="meta">Effective date: 2026-11-06</p>
 
 <p>
 This privacy policy applies to the <strong>PureRunAir</strong> app for mobile devices (the "Application"),
@@ -66,25 +66,24 @@ and elevation shown in the app.
 
 <h2>Location Data</h2>
 <p>
-For the tracker to work, the Application requests two location permissions on iOS:</p>
-<ul>
-  <li><strong>While using the app</strong> — to record your route while the app is open.</li>
-  <li><strong>Always / in the background</strong> — so recording continues when the device is locked or the
-      app is in the background, for example when the phone is in your pocket or an armband.</li>
-</ul>
+PureRunAir asks for <strong>While Using the App</strong> location access when you start your first run.
+While a run is active, the app keeps a continuous background location session, so recording continues
+with the screen locked or the app in the background — for example with the phone in a pocket or an
+armband. Depending on your iOS version, an <strong>Always</strong> option may also be available in
+Settings; it is not required for a run that you start in the app.
+</p>
 <p>
-You can review and change these permissions at any time in
+You can review and change location access at any time in
 <strong>iOS Settings &rarr; Privacy &amp; Security &rarr; Location Services</strong>.
-If you do not grant location permission, the Application will already work for other purposes but cannot
-record a running route. Location data is used solely for recording your route and computing your run
+If you deny access, you can still open the app and review runs already saved on your device, but it
+cannot record a new route. Location data is used solely for recording your route and computing your run
 statistics.</p>
 
 <h2>Live Activity</h2>
 <p>
 While a run is in progress, the Application can display your current run (time, distance and pace) as a
 Live Activity on the Lock Screen and in the Dynamic Island. This content is rendered locally on your
-device, is never captured, uploaded or disclosed to anyone, and ends when you stop and save or discard the
-run.</p>
+device, is never captured, uploaded or disclosed to anyone, and ends when you stop the run.</p>
 
 <h2>GPX Export</h2>
 <p>
@@ -94,10 +93,15 @@ entirely local — no copy is sent anywhere by the Application.</p>
 
 <h2>Storage and Data Retention</h2>
 <p>
-All recorded runs are stored exclusively in a local database on your device. No cloud storage or backup
-service is used. Data is retained on the device for as long as you keep it. You can delete individual runs
-in the app, overwrite or delete all data, or remove everything simply by uninstalling the Application.
-Because data never leaves the device, no retention obligations or retention schedules on any server apply.</p>
+All recorded runs are stored exclusively in a local database on your device. The Application has no cloud
+service and uploads nothing. Data is retained on the device for as long as you keep it. You can delete
+runs in the app, replace the local database by importing a backup, or remove everything simply by
+uninstalling the Application. Because data never leaves the device through the Application, no retention
+obligations or retention schedules on any server apply.</p>
+<p>
+Your device's own backup settings (iCloud Backup or a computer backup) may include the app's local data,
+depending on how you have configured iOS. That backup is controlled by you and by Apple, not by the
+Application.</p>
 
 <h2>Cookies and Tracking Technologies</h2>
 <p>
@@ -107,8 +111,10 @@ Application.</p>
 
 <h2>Third Party Access</h2>
 <p>
-None. The Application contains no third-party SDKs and makes no network requests. There are no external
-services, and therefore no data is shared with, or accessible to, any third party.</p>
+None. The Application makes no network requests and contains no third-party analytics, advertising or
+tracking SDKs. The open-source libraries bundled for local storage and GPX parsing (GRDB.swift and AEXML)
+run entirely on the device and send nothing. There are no external services, and therefore no data is
+shared with, or accessible to, any third party.</p>
 
 <h2>International Data Transfers</h2>
 <p>
@@ -123,7 +129,7 @@ directly:</p>
   <li><strong>Access</strong> — view your recorded runs and statistics inside the app.</li>
   <li><strong>Correction</strong> — the recorded data is generated automatically from GPS; you can delete any
       run you consider inaccurate.</li>
-  <li><strong>Deletion</strong> — delete individual runs in the app, clear all app data, or uninstall the
+  <li><strong>Deletion</strong> — delete runs in the app (individually or several at a time), or uninstall the
       Application.</li>
 </ul>
 <p>
@@ -182,7 +188,7 @@ please contact the Service Provider by email at
 </div>
 
 <div class="footer">
-PureRunAir &middot; Version 1.0.18 &middot; This privacy policy is effective as of 2026-09-17<br>
+PureRunAir &middot; Version 1.1.5 &middot; This privacy policy is effective as of 2026-11-06<br>
 <a href="support.html">Support</a>
 </div>
 
