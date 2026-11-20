@@ -42,7 +42,7 @@
 <body>
 
 <h1>Support</h1>
-<p class="meta">PureRunAir &middot; Version 1.1.5 &middot; iPhone only &middot; Requires iOS 16.2 or later</p>
+<p class="meta">PureRunAir &middot; Version 1.1.6 &middot; iPhone only &middot; Requires iOS 16.2 or later</p>
 
 <p>
 PureRunAir is a minimalist running tracker. It records your route using GPS, computes distance, pace and
@@ -70,7 +70,9 @@ To help us resolve issues quickly, please include:</p>
   screen locked or the app in the background — for example with the phone in a pocket or armband. An
   <strong>Always</strong> option may also be available in Settings on some iOS versions; it is optional.
   Your location is used only to record your route and never leaves the device. You can change access at
-  any time in <strong>Settings &rarr; Privacy &amp; Security &rarr; Location Services</strong>.</p>
+  any time in <strong>Settings &rarr; Privacy &amp; Security &rarr; Location Services</strong>. A separate
+  <strong>Motion &amp; Fitness</strong> prompt follows the first time a run starts; it is only used for the
+  barometer (see the next question) and can be declined.</p>
 </div>
 
 <div class="qa">
@@ -115,12 +117,22 @@ To help us resolve issues quickly, please include:</p>
 </div>
 
 <div class="qa">
+  <p class="q">Why does the app ask for Motion &amp; Fitness access?</p>
+  <p>For the barometer. Elevation from GPS alone jumps by several metres between samples, so PureRunAir
+  pairs the barometric pressure sensor with your position: the GPS fixes set the altitude you start at,
+  the barometer tracks how it changes, and a slow correction keeps the two from drifting apart over a long
+  run. The reading is used only to record the elevation of your own run and stays on the device. If you
+  decline, the app still records the run and falls back to GPS-only elevation — the live elevation row
+  then says <strong>GPS</strong> instead of <strong>barometer</strong>.</p>
+</div>
+
+<div class="qa">
   <p class="q">Why do elevation totals differ from what I remember (or from another app)?</p>
-  <p>Altitude from GPS is noisy, so PureRunAir smooths it before counting climb: a short median over the
-  last few samples, then a 1&nbsp;m threshold, so a single bad reading cannot invent a hill. That means the
-  totals are deliberately conservative, and a run recorded with an older version can show a slightly
-  different gain/loss than it did at the time. The recorded route and altitude samples themselves are
-  unchanged — only the summary is recalculated.</p>
+  <p>Elevation is fused from GPS and the barometer before any climb is counted: a short median over the
+  last few samples, then a 1&nbsp;m threshold, so a single bad reading cannot invent a hill. Runs recorded
+  before the barometer was used contain GPS-only altitude, so an older and a newer run over the same hill
+  can show slightly different totals. The totals are deliberately conservative; the recorded route and the
+  per-sample altitude are stored unchanged — only the summary is recalculated.</p>
 </div>
 
 <div class="qa">
@@ -153,7 +165,17 @@ To help us resolve issues quickly, please include:</p>
   <p>Email <a href="mailto:vegaodm@outlook.com">vegaodm@outlook.com</a> and we'll get back to you.</p>
 </div>
 
-<h2>What's new in 1.1.5</h2>
+<h2>What's new in 1.1.6</h2>
+<ul>
+  <li>Elevation is fused from GPS and the barometer, so a climb is counted once instead of being inflated
+      by GPS noise, and flat runs stop inventing hills.</li>
+  <li>Live elevation while you run, marked with ± until the altitude reference settles.</li>
+  <li>The raw GPS altitude and the barometric reading are kept with every sample and written into
+      exported GPX files.</li>
+  <li>GPS fixes with poor vertical accuracy no longer distort elevation.</li>
+</ul>
+
+<h2>What's new in 1.1.5 (previous release)</h2>
 <ul>
   <li>The Live Activity pace now uses moving time, matches the app, and follows metric/imperial units;
       Lock Screen text stays readable in light mode.</li>
@@ -171,12 +193,14 @@ To help us resolve issues quickly, please include:</p>
 <ul>
   <li>iOS 16.2 or later installed?</li>
   <li>Location Services enabled with <strong>Precise Location</strong>?</li>
+  <li><strong>Motion &amp; Fitness</strong> allowed for the app? Without it elevation falls back to GPS, so
+      the live elevation row shows <strong>GPS</strong> and totals are noisier.</li>
   <li>Low Power Mode not restricting background activity during long runs?</li>
   <li>Restarting the app (swipe it away and reopen) fixes many transient issues.</li>
 </ul>
 
 <div class="footer">
-PureRunAir &middot; Version 1.1.5 &middot;<br>
+PureRunAir &middot; Version 1.1.6 &middot;<br>
 <a href="index.html">Privacy Policy</a>
 </div>
 

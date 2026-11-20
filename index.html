@@ -63,6 +63,12 @@ While you are running, the Application uses the GPS receiver of your device to r
 about once per second. These samples form your running route and are used to compute the distance, pace
 and elevation shown in the app.
 </p>
+<p>
+To make elevation steady, the Application also reads the device barometer (altimeter). This requires the
+<strong>Motion &amp; Fitness</strong> permission on iOS. Barometric readings are used only to compute the
+elevation of your own run, are stored with that run on your device, and are never uploaded or shared.
+If you decline Motion &amp; Fitness access, the app keeps working and records elevation from GPS alone.
+</p>
 
 <h2>Location Data</h2>
 <p>
@@ -127,8 +133,8 @@ Because all of your data lives on your own device, you can exercise access, corr
 directly:</p>
 <ul>
   <li><strong>Access</strong> — view your recorded runs and statistics inside the app.</li>
-  <li><strong>Correction</strong> — the recorded data is generated automatically from GPS; you can delete any
-      run you consider inaccurate.</li>
+  <li><strong>Correction</strong> — the recorded data is generated automatically from GPS and the
+      barometer; you can delete any run you consider inaccurate.</li>
   <li><strong>Deletion</strong> — delete runs in the app (individually or several at a time), or uninstall the
       Application.</li>
 </ul>
@@ -142,9 +148,10 @@ address below.</p>
 <h2>Opt-Out Rights</h2>
 <p>
 You can stop location collection at any time without deleting the app, by revoking location permission in
-<strong>iOS Settings &rarr; Privacy &amp; Security &rarr; Location Services</strong>. To stop all data
-collection entirely, uninstall the Application — its local data on your device is removed along with the
-app.</p>
+<strong>iOS Settings &rarr; Privacy &amp; Security &rarr; Location Services</strong>. To stop the barometer
+reading, revoke <strong>Motion &amp; Fitness</strong> for the app (elevation then comes from GPS alone).
+To stop all data collection entirely, uninstall the Application — its local data on your device is removed
+along with the app.</p>
 
 <h2>Children</h2>
 <p>
@@ -177,8 +184,9 @@ acceptance of the updated policy. You are encouraged to review this page periodi
 <h2>Consent</h2>
 <p>
 By installing and using the Application you confirm that you have read and understood this policy. You
-understand that the Application records your location data solely on your device for the purpose of
-tracking your run, and you may withdraw location access at any time via iOS Settings.</p>
+understand that the Application records your location data and reads the barometer solely on your device
+for the purpose of tracking your run and its elevation, and you may withdraw location or Motion &
+Fitness access at any time via iOS Settings.</p>
 
 <h2>Contact Us</h2>
 <div class="card">
@@ -188,7 +196,7 @@ please contact the Service Provider by email at
 </div>
 
 <div class="footer">
-PureRunAir &middot; Version 1.1.5 &middot; This privacy policy is effective as of 2026-11-06<br>
+PureRunAir &middot; Version 1.1.6 &middot; This privacy policy is effective as of 2026-11-20<br>
 <a href="support.html">Support</a>
 </div>
 
