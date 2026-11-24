@@ -42,7 +42,7 @@
 <body>
 
 <h1>Support</h1>
-<p class="meta">PureRunAir &middot; Version 1.1.6 &middot; iPhone only &middot; Requires iOS 16.2 or later</p>
+<p class="meta">PureRunAir &middot; Version 1.1.7 &middot; iPhone only &middot; Requires iOS 16.2 or later</p>
 
 <p>
 PureRunAir is a minimalist running tracker. It records your route using GPS, computes distance, pace and
@@ -161,11 +161,41 @@ To help us resolve issues quickly, please include:</p>
 </div>
 
 <div class="qa">
+  <p class="q">I saw "Some Data Could Not Be Saved" or a share error. What do I do?</p>
+  <p>Those messages mean the app could not finish writing to its local database or could not create a
+  GPX file. Almost always the cause is a full device: free up storage in
+  <strong>iOS Settings &rarr; General &rarr; iPhone Storage</strong>, then check whether the run is in
+  your list. Runs are written in small batches while you run, so only the last few seconds can be
+  missing — the message tells you how many points were affected. If the message appears repeatedly with
+  plenty of free space, export a database backup (top-left arrow) and contact support.</p>
+</div>
+
+<div class="qa">
+  <p class="q">My import was rejected. Why?</p>
+  <p>Before replacing your runs, PureRunAir checks that the file really is a PureRunAir database, that it
+  is not larger than 256&nbsp;MB, that it contains no SQLite triggers or views (the app never creates
+  them), and that its integrity check passes. A rejected file is left untouched on your device and your
+  existing runs are kept. Re-export a fresh backup from the app that recorded the runs and try again.</p>
+</div>
+
+<div class="qa">
   <p class="q">My question isn't answered here.</p>
   <p>Email <a href="mailto:vegaodm@outlook.com">vegaodm@outlook.com</a> and we'll get back to you.</p>
 </div>
 
-<h2>What's new in 1.1.6</h2>
+<h2>What's new in 1.1.7</h2>
+<ul>
+  <li>A failed share or export now explains what went wrong instead of appearing to do nothing.</li>
+  <li>PureRunAir warns you when the last run could not be fully saved to the device, instead of losing
+      points silently.</li>
+  <li>Importing a database is validated harder: oversized, damaged or unexpected files are rejected
+      before they touch your runs.</li>
+  <li>If an import has to be undone and the old data cannot be restored, the app says so instead of
+      silently starting empty.</li>
+  <li>No functional changes; this release is about error handling and data safety.</li>
+</ul>
+
+<h2>What's new in 1.1.6 (previous release)</h2>
 <ul>
   <li>Elevation is fused from GPS and the barometer, so a climb is counted once instead of being inflated
       by GPS noise, and flat runs stop inventing hills.</li>
@@ -175,7 +205,7 @@ To help us resolve issues quickly, please include:</p>
   <li>GPS fixes with poor vertical accuracy no longer distort elevation.</li>
 </ul>
 
-<h2>What's new in 1.1.5 (previous release)</h2>
+<h2>What's new in 1.1.5 (older release)</h2>
 <ul>
   <li>The Live Activity pace now uses moving time, matches the app, and follows metric/imperial units;
       Lock Screen text stays readable in light mode.</li>
@@ -195,12 +225,13 @@ To help us resolve issues quickly, please include:</p>
   <li>Location Services enabled with <strong>Precise Location</strong>?</li>
   <li><strong>Motion &amp; Fitness</strong> allowed for the app? Without it elevation falls back to GPS, so
       the live elevation row shows <strong>GPS</strong> and totals are noisier.</li>
+  <li>At least a few hundred MB of free storage? A full device makes saves and GPX exports fail.</li>
   <li>Low Power Mode not restricting background activity during long runs?</li>
   <li>Restarting the app (swipe it away and reopen) fixes many transient issues.</li>
 </ul>
 
 <div class="footer">
-PureRunAir &middot; Version 1.1.6 &middot;<br>
+PureRunAir &middot; Version 1.1.7 &middot;<br>
 <a href="index.html">Privacy Policy</a>
 </div>
 
