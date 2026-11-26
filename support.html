@@ -42,7 +42,7 @@
 <body>
 
 <h1>Support</h1>
-<p class="meta">PureRunAir &middot; Version 1.1.7 &middot; iPhone only &middot; Requires iOS 16.2 or later</p>
+<p class="meta">PureRunAir &middot; Version 1.1.8 &middot; iPhone only &middot; Requires iOS 16.2 or later</p>
 
 <p>
 PureRunAir is a minimalist running tracker. It records your route using GPS, computes distance, pace and
@@ -183,7 +183,17 @@ To help us resolve issues quickly, please include:</p>
   <p>Email <a href="mailto:vegaodm@outlook.com">vegaodm@outlook.com</a> and we'll get back to you.</p>
 </div>
 
-<h2>What's new in 1.1.7</h2>
+<h2>What's new in 1.1.8</h2>
+<ul>
+  <li>The run detail elevation chart is rebuilt: a smoothed line with elevation and distance axes, and the
+      highest and lowest points marked.</li>
+  <li>Drag across the chart to read the elevation at any distance &mdash; for example "2.00&nbsp;km &middot;
+      199&nbsp;m".</li>
+  <li>Min and Max now tell you where they happened ("at 2.5&nbsp;km").</li>
+  <li>Switching between kilometres and miles updates the chart's distance grid immediately.</li>
+</ul>
+
+<h2>What's new in 1.1.7 (previous release)</h2>
 <ul>
   <li>A failed share or export now explains what went wrong instead of appearing to do nothing.</li>
   <li>PureRunAir warns you when the last run could not be fully saved to the device, instead of losing
@@ -195,7 +205,7 @@ To help us resolve issues quickly, please include:</p>
   <li>No functional changes; this release is about error handling and data safety.</li>
 </ul>
 
-<h2>What's new in 1.1.6 (previous release)</h2>
+<h2>What's new in 1.1.6 (older release)</h2>
 <ul>
   <li>Elevation is fused from GPS and the barometer, so a climb is counted once instead of being inflated
       by GPS noise, and flat runs stop inventing hills.</li>
@@ -203,20 +213,6 @@ To help us resolve issues quickly, please include:</p>
   <li>The raw GPS altitude and the barometric reading are kept with every sample and written into
       exported GPX files.</li>
   <li>GPS fixes with poor vertical accuracy no longer distort elevation.</li>
-</ul>
-
-<h2>What's new in 1.1.5 (older release)</h2>
-<ul>
-  <li>The Live Activity pace now uses moving time, matches the app, and follows metric/imperial units;
-      Lock Screen text stays readable in light mode.</li>
-  <li>Route maps keep their true shape instead of being stretched horizontally.</li>
-  <li>Elapsed time covers the whole run, and the detail screen refreshes while a run is active.</li>
-  <li>Importing a database is safer: a bad file can no longer replace your runs, and import is blocked
-      while recording.</li>
-  <li>Duplicate GPS fixes can no longer drop a batch of recorded points; leaving the app flushes the
-      buffer to disk immediately.</li>
-  <li>If location access is revoked during a run, the run is closed cleanly.</li>
-  <li>GPX export is prepared off the main thread, so the run list stays responsive.</li>
 </ul>
 
 <h2>Troubleshooting Checklist</h2>
@@ -231,7 +227,7 @@ To help us resolve issues quickly, please include:</p>
 </ul>
 
 <div class="footer">
-PureRunAir &middot; Version 1.1.7 &middot;<br>
+PureRunAir &middot; Version 1.1.8 &middot;<br>
 <a href="index.html">Privacy Policy</a>
 </div>
 
